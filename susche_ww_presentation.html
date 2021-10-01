@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Best Management Practice (BMP) implementation on a HUC 10 scale</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Cassandra Davis, Zi Xun Kua, John C. Stella, Lauren Townley" />
+    <meta name="date" content="2021-03-09" />
+    <link href="susche_ww_presentation_files/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="susche_ww_presentation_files/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Best Management Practice (BMP) implementation on a HUC 10 scale
+### Cassandra Davis, Zi Xun Kua, John C. Stella, Lauren Townley
+### March 09, 2021
+
+---
+
+
+
+
+name: outline
+
+# Outline
+
+Purpose: Compare the relationships between BMP implementation and the water quality measurements collected through the Nontidal Network (NTN) gaging stations and the Rotating Integrated Basin Studies (RIBS).
+
+  1. Background and trends overview
+  
+  2. BMP time series and maps
+  
+  3. Case study results
+  
+  4. Key takeaways and management implications
+
+---
+
+name: background
+
+# Background and trends overview
+
+  - USGS Nontidal network (NTN) nutrient measurements
+  
+  - Rotating Integrated Basin Studies (RIBS)
+  
+    + Biological Assesment Profile (BAP) score
+    
+  - Spatial Data
+    
+    + Chesapeake Bay land use data
+    + National hydrography data set
+
+&lt;img src="figures/HUC10Names.jpg" width="90%" align="center" /&gt;
+
+---
+
+name: ntn
+
+## Nontidal network (NTN) USGS gaging stations
+
+  - Daily data summarized to **monthly** and yearly
+
+  - [Long-term vs. Short-term](#allstation)
+
+  - Long-term: [Towanda](#towanda)
+
+  - Short-term: [Campbell](#campbell), [Chemung](#chemung), [Conklin](#conklin), [Rockdale](#rockdale), [Waverly](#waverly)
+  
+&lt;img src="figures/NTNMonitoringStationsCompare.jpg" width="50%" align="center" /&gt;
+
+---
+
+name: allstation
+
+### All Stations
+
+&lt;img src="figures/NTNMonitoringStationsCompare.jpg" width="85%" align="center" /&gt;
+
+[Back](#ntn)
+
+---
+
+name: campbell
+
+### Campbell
+
+&lt;img src="figures/NTNCampbell.jpg" width="85%" align="center" /&gt;
+
+[Back](#ntn)
+
+---
+
+name: chemung
+
+### Chemung
+
+&lt;img src="figures/NTNChemung.jpg" width="85%" align="center" /&gt;
+
+[Back](#ntn)
+
+---
+
+name: rockdale
+
+### Rockdale
+
+&lt;img src="figures/NTNRockdale.jpg" width="85%" align="center" /&gt;
+
+[Back](#ntn)
+
+---
+
+name: conklin
+
+### Conklin
+
+&lt;img src="figures/NTNConklin.jpg" width="85%" align="center" /&gt;
+
+[Back](#ntn)
+
+---
+
+name: waverly
+
+### Waverly
+
+&lt;img src="figures/NTNWaverly.jpg" width="85%" align="center" /&gt;
+
+[Back](#ntn)
+
+---
+
+name: towanda
+
+### Towanda
+    
+&lt;img src="figures/NTNTowanda.jpg" width="85%" align="center" /&gt;
+
+[Back](#ntn)
+
+---
+
+### Total Nitrogen
+
+.left-column[
+Overall *decreasing* trend (**Towanda**)
+  
+**Waverly** and **Chemung** showed signs of *increase*
+  
+Slight *uptick* in 2019
+]
+
+.right-column[
+&lt;img src="figures/tn_fnconc_all_station.png" width="100%" align="center" /&gt;]
+
+---
+
+### Total Phosphorus
+
+.left-column[Overall *decreasing* trend (**Towanda**)
+  
+*Decrease* slower than TN but clearer at **sub-watersheds**
+]
+
+.right-column[
+&lt;img src="figures/tp_fnconc_all_station.png" width="100%" align="center" /&gt;]
+
+---
+
+### Suspended sediments
+
+.left-column[Levels *fluctuated* through the years with recent *increases*
+  
+Varying trends among sub-watershed
+]
+
+.right-column[
+&lt;img src="figures/ss_fnconc_all_station.png" width="100%" align="center" /&gt;]
+
+---
+
+name: ribs_home
+
+## Rotating Integrated Basin Studies (RIBS)
+
+  - 5-year sampling cycle
+  
+  - includes: water column, sediment, organism tissue chemistry, and biological assessment
+
+&lt;img src="figures/AverageBAPScores.jpg" width="85%" align="center" /&gt;
+
+More information at: https://www.dec.ny.gov/chemical/23848.html
+
+Data link: https://nysdec.maps.arcgis.com/apps/webappviewer/index.html?id=692b72ae03f14508a0de97488e142ae1
+
+---
+
+### Biological assessment profile (BAP) score
+.pull-left[
+- Based on stream macroinvertebrates
+    
+- Blue: Non-impacted 
+  (&gt; 7.5)
+    
+- Green: Slightly-impacted (5.0 - 7.5)
+    
+- Yellow: Moderately impacted (2.5 - 5.0)
+    
+- Red: Severely impacted (&lt; 2.5)
+    
+https://www.dec.ny.gov/docs/water_pdf/bapnarrative18.pdf]
+
+.pull-right[&lt;img src="figures/5yearBAPScores.gif" width="100%" align="center" /&gt;]
+
+???
+scores derived from species  richness,  EPT  richness, Hilsenhoff’s biotic index, percent model affinity, nutrient biotic index, species diversity, and non-Chironomidae  and  Oligochaeta  richness
+
+see link for detailed description and metrics for each score component
+
+---
+
+#### BAP time series
+
+  - No overall changes across the Upper Susquehanna / Chemung watershed
+
+&lt;img src="figures/bap_time_series.png" width="85%" align="center" /&gt;
+
+???
+will revisit time trends again later
+
+---
+
+name: baphuc10
+
+#### BAP by HUC 10
+
+  - [Unequal sampling distribution](#ribs_home) in the watershed
+  
+  - Most HUC 10s do not show clear trends
+
+&lt;img src="figures/bap_huc10.png" width="85%" align="center" /&gt;
+
+---
+
+## Spatial Data
+
+### 1-m Land Use data
+
+  - land use data based on satellite imagery (2013)
+  - developed by UVM for the Chesapeake Bay program in 2016
+
+### National Hydrography Dataset (NHD)
+
+  - Stream kilometers (2015)
+  - Stream density
+
+### Riparian Managament Zone (RMZ)
+
+  - 30 meter buffer around streams
+  - created from NHD dataset (2015) and the CBP and use dataset (2016)
+
+---
+name: landuse_huc10
+
+### [**Land use**](#landuse_huc10) - [Agriculture](#agriculture) | [Forested](#forested) | [Wetlands](#wetlands) | [Developed](#developed) | [Others](#others)
+
+&lt;img src="figures/HUC10Names.jpg" width="100%" align="center" /&gt;
+
+---
+
+name: agriculture
+
+### [Land use](#landuse_huc10) - [**Agriculture**](#agriculture) | [Forested](#forested) | [Wetlands](#wetlands) | [Developed](#developed) | [Others](#others)
+[**Raw**](#agriculture) | [Percent](#agdensity)
+
+&lt;img src="figures/LandCoverAg.jpg" width="100%" align="center" /&gt;
+
+---
+
+name: agdensity
+
+### [Land use](#landuse_huc10) - [**Agriculture**](#agriculture) | [Forested](#forested) | [Wetlands](#wetlands) | [Developed](#developed) | [Others](#others)
+[Raw](#agriculture) | [**Percent**](#agdensity)
+
+&lt;img src="figures/AgDensity.jpg" width="100%" align="center" /&gt;
+
+---
+
+name: forested
+
+### [Land use](#landuse_huc10) - [Agriculture](#agriculture) | [**Forested**](#forested) | [Wetlands](#wetlands) | [Developed](#developed) | [Others](#others)
+[**Raw**](#forested) | [Percent](#forestdensity)
+
+&lt;img src="figures/LandCoverForest.jpg" width="100%" align="center" /&gt;
+
+---
+
+name: forestdensity
+
+### [Land use](#landuse_huc10) - [Agriculture](#agriculture) | [**Forested**](#forested) | [Wetlands](#wetlands) | [Developed](#developed) | [Others](#others)
+
+[Raw](#forested) | [**Percent**](#forestdensity)
+
+&lt;img src="figures/PercentForestHUC10.jpg" width="100%" align="center" /&gt;
+
+---
+
+name: wetlands
+
+### [Land use](#landuse_huc10) - [Agriculture](#agriculture) | [Forested](#forested) | [**Wetlands**](#wetlands) | [Developed](#developed) | [Others](#others)
+
+[**Raw**](#wetlands) | [Percent](#wetland_density)
+
+&lt;img src="figures/LandCoverWetland.jpg" width="100%" align="center" /&gt;
+
+---
+
+name: wetland_density
+
+### [Land use](#landuse_huc10) - [Agriculture](#agriculture) | [Forested](#forested) | [**Wetlands**](#wetlands) | [Developed](#developed) | [Others](#others)
+
+[Raw](#wetlands) | [**Percent**](#wetland_density)
+
+&lt;img src="figures/PercentWetland.jpg" width="100%" align="center" /&gt;
+
+---
+
+name: developed
+
+### [Land use](#landuse_huc10) - [Agriculture](#agriculture) | [Forested](#forested) | [Wetlands](#wetlands) | [**Developed**](#developed) | [Others](#others)
+
+[**Raw**](#developed) | [Percent](#developed_density)
+
+&lt;img src="figures/LandCoverImpervious.jpg" width="100%" align="center" /&gt;
+
+---
+
+name: developed_density
+
+### [Land use](#landuse_huc10) - [Agriculture](#agriculture) | [Forested](#forested) | [Wetlands](#wetlands) | [**Developed**](#developed) | [Others](#others)
+
+[Raw](#developed) | [**Percent**](#developed_density)
+
+&lt;img src="figures/PercentImpervious.jpg" width="100%" align="center" /&gt;
+
+---
+
+name: others
+
+### [Land use](#landuse_huc10) - [Agriculture](#agriculture) | [Forested](#forested) | [Wetlands](#wetlands) | [Developed](#developed) | [**Others**](#others)
+
+[Mixed Open](#mixedopen) | [Turf Grass](#turfgrass) | [Water](#water)
+
+&lt;img src="figures/LandCoverMixedOpen.jpg" width="45%" align="center" /&gt;
+&lt;img src="figures/LandCoverTurfGrass.jpg" width="45%" align="center" /&gt;
+&lt;img src="figures/LandCoverWater.jpg" width="45%" align="center" /&gt;
+
+---
+
+name: mixedopen
+
+### [Land use](#landuse_huc10) - [Agriculture](#agriculture) | [Forested](#forested) | [Wetlands](#wetlands) | [Developed](#developed) | [**Others**](#others)
+
+[**Mixed Open**](#mixedopen) | [Turf Grass](#turfgrass) | [Water](#water)
+
+&lt;img src="figures/LandCoverMixedOpen.jpg" width="80%" align="center" /&gt;
+
+&lt;img src="figures/PercentMixedOpenHUC10.jpg" width="80%" align="center" /&gt;
+
+---
+
+name: turfgrass
+
+### [Land use](#landuse_huc10) - [Agriculture](#agriculture) | [Forested](#forested) | [Wetlands](#wetlands) | [Developed](#developed) | [**Others**](#others)
+
+[Mixed Open](#mixedopen) | [**Turf Grass**](#turfgrass) | [Water](#water)
+
+&lt;img src="figures/LandCoverTurfGrass.jpg" width="80%" align="center" /&gt;
+
+&lt;img src="figures/PercentTurfGrassHUC10.jpg" width="80%" align="center" /&gt;
+
+---
+
+name: water
+
+### [Land use](#landuse_huc10) - [Agriculture](#agriculture) | [Forested](#forested) | [Wetlands](#wetlands) | [Developed](#developed) | [**Others**](#others)
+
+[Mixed Open](#mixedopen) | [Turf Grass](#turfgrass) | [**Water**](#water)
+
+&lt;img src="figures/LandCoverWater.jpg" width="80%" align="center" /&gt;
+
+&lt;img src="figures/PercentWaterHUC10.jpg" width="80%" align="center" /&gt;
+
+---
+
+### National Hydrography Dataset
+
+  - Stream density
+  
+  - Riparian Management Zones (RMZ)
+
+&lt;img src="figures/Streams.jpg" width="100%" align="center" /&gt;
+
+---
+
+#### Stream density
+  
+  - Stream length over HUC 10 area
+
+&lt;img src="figures/StreamDensityKm.jpg" width="100%" align="center" /&gt;
+
+---
+
+name: RMZ_landcov
+
+#### Riparian management zones (RMZ)
+
+  - [**NHD + land cover dataset**](#RMZ_landcov)
+
+  - [30 meter buffer around streams](#RMZ_buff)
+  
+  - [Area of RMZ](#RMZ_example) [over HUC 10](#RMZ_HUC10)
+
+&lt;img src="figures/RMZExample.jpg" width="85%" align="center" /&gt;
+
+---
+
+name: RMZ_buff
+
+#### Riparian management zones (RMZ)
+
+  - [NHD + land cover dataset](#RMZ_landcov)
+  
+  - [**30 meter buffer around streams**](#RMZ_buff)
+  
+  - [Area of RMZ](#RMZ_example) [over HUC 10](#RMZ_HUC10)
+
+&lt;img src="figures/RMZExample2.jpg" width="85%" align="center" /&gt;
+
+---
+
+name: RMZ_example
+
+#### Riparian management zones (RMZ)
+
+  - [NHD + land cover dataset](#RMZ_landcov)
+  
+  - [30 meter buffer around streams](#RMZ_buff)
+  
+  - [**Area of RMZ**](#RMZ_example) [over HUC 10](#RMZ_HUC10)
+
+&lt;img src="figures/RMZExample3.jpg" width="85%" align="center" /&gt;
+
+---
+
+name: RMZ_HUC10
+
+#### Riparian management zones (RMZ)
+
+  - [NHD + land cover dataset](#RMZ_landcov)
+  
+  - [30 meter buffer around streams](#RMZ_buff)
+  
+  - [Area of RMZ](#RMZ_example) [**over HUC 10**](#RMZ_HUC10)
+
+&lt;img src="figures/RMZHUC10.jpg" width="100%" align="center" /&gt;
+
+---
+
+name: bmp_plotly
+
+# Best management practices (BMPs)
+
+`&lt;iframe src="figures/usc_bmp_plotly.html" width="100%" height="500" scrolling="no" seamless="seamless" frameBorder="0"&gt;&lt;/iframe&gt;`{=html}
+
+---
+
+# Best management practices (BMPs)
+
+## Annual 
+
+  - [Nutrient Management Core N](#nutrientmanagementtime) &amp; P
+  
+  - Soil Conservation Plans
+  
+  - Cover Crops
+
+## Cumulative
+
+  - [Buffer BMPs](#buffertime) (Exclusion Fence &amp; Cropland Forest/Grass Buffer)
+  
+  - Wetlands
+
+---
+
+name: nutrientmanagementmap
+
+## Annual - [Nutrient Management Core N](#nutrientmanagementmap)
+
+.left-column[Similar values from `Nutrient Management Core P`
+  
+Increase implementation around [2015](#nutrientmanagementtime)
+  
+Implementation more consistent in some [HUC 10](#nutrientmanagementhuc10)s
+]
+
+.right-column[&lt;img src="figures/NutrientManagementPlan_Percent_Imp.gif" width="100%" align="right" /&gt;]
+
+---
+
+name: nutrientmanagementtime
+
+## Annual - [Nutrient Management Core N](#nutrientmanagementmap)
+
+.left-column[Similar values from `Nutrient Management Core P`
+  
+Increase implementation around [2015](#nutrientmanagementtime)
+  
+Implementation more consistent in some [HUC 10](#nutrientmanagementhuc10)s
+]
+
+.right-column[&lt;img src="figures/nutrientmanagecoren_time.png" width="100%" align="right" /&gt;]
+
+---
+
+name: nutrientmanagementhuc10
+
+## Annual - [Nutrient Management Core N](#nutrientmanagementmap)
+
+.left-column[Similar values from `Nutrient Management Core P`
+  
+Increase implementation around [2015](#nutrientmanagementtime)
+  
+Implementation more consistent in some [HUC 10](#nutrientmanagementhuc10)s
+]
+
+.right-column[&lt;img src="figures/nutrientmanagecoren_huc10.png" width="100%" align="right" /&gt;]
+
+---
+
+name: buffermap
+
+## Cumulative - [Buffers](#buffermap)
+
+.left-column[Proportions calculated from riparian management zones (RMZ)
+
+Implementation in [waves](#buffertime)
+
+Fewer [HUC 10](#bufferhuc10)s have implemented
+]
+
+.right-column[&lt;img src="figures/CumulativeTotalBuffer_Percent_Imp.gif" width="100%" align="right" /&gt;]
+
+---
+
+name: buffertime
+
+## Cumulative - [Buffers](#buffermap)
+
+.left-column[Proportions calculated from riparian management zones (RMZ)
+
+Implementation in [waves](#buffertime)
+
+Fewer [HUC 10](#bufferhuc10)s have implemented
+]
+
+.right-column[&lt;img src="figures/bufferbmp_time.png" width="100%" align="right" /&gt;]
+
+---
+
+name: bufferhuc10
+
+## Cumulative - [Buffers](#buffermap)
+
+.left-column[Proportions calculated from riparian management zones (RMZ)
+
+Implementation in [waves](#buffertime)
+
+Fewer [HUC 10](#bufferhuc10)s have implemented
+]
+
+.right-column[&lt;img src="figures/bufferbmp_huc10.png" width="100%" align="right" /&gt;]
+
+---
+
+# BMPs vs. BAP score?
+
+## **Nutrient Management Core N** | Buffer BMPs
+
+.left-column[Colors represent each HUC 8
+
+No clear overall trends]
+
+.right-column[&lt;img src="figures/nutrientmanage_coren_x_bap.png" width="100%" align="center" /&gt;]
+
+---
+
+# BMPs vs. BAP score?
+
+## Nutrient Management Core N | **Buffer BMPs**
+
+.left-column[Colors represent each HUC 8
+
+No clear overall trends]
+
+.right-column[&lt;img src="figures/bufferbmp_x_bap.png" width="100%" align="center" /&gt;]
+
+---
+
+name: cohocton_buff
+
+# Case Study
+
+###[**Cohocton River**](#cohocton_buff) | [Tioughnioga River](#tioughnioga_buff)
+
+[**Buffer BMPs**](#cohocton_buff) | [Nutrient Management Core N](#cohocton_nmcn)
+
+&lt;img src="figures/bap_cohocton_time.png" width="50%" align="left"/&gt;
+&lt;img src="figures/buffer_cohocton_time.png" width="50%" align="right"/&gt;
+
+---
+name: cohocton_nmcn
+
+# Case Study
+
+###[**Cohocton River**](#cohocton_buff) | [Tioughnioga River](#tioughnioga_buff)
+
+[Buffer BMPs](#cohocton_buff) | [**Nutrient Management Core N**](#cohocton_nmcn)
+
+&lt;img src="figures/bap_cohocton_time.png" width="50%" align="left"/&gt;
+&lt;img src="figures/nutrientmanagecoren_cohocton_time.png" width="50%" align="right"/&gt;
+
+---
+name: tioughnioga_buff
+
+# Case Study
+
+###[Cohocton River](#cohocton_buff) | [**Tioughnioga River**](#tioughnioga_buff)
+
+[**Buffer BMPs**](#tioughnioga_buff) | [Nutrient Management Core N](tioughnioga_nmcn)
+
+&lt;img src="figures/bap_tioughnioga_time.png" width="50%" align="left"/&gt;
+&lt;img src="figures/buffer_tioughnioga_time.png" width="50%" align="right"/&gt;
+
+---
+name: tioughnioga_nmcn
+
+# Case Study
+
+###[Cohocton River](#cohocton_buff) | [**Tioughnioga River**](#tioughnioga_buff)
+
+[Buffer BMPs](#tioughnioga_buff) | [**Nutrient Management Core N**](#tioughnioga_nmcn)
+
+&lt;img src="figures/bap_tioughnioga_time.png" width="50%" align="left"/&gt;
+&lt;img src="figures/nutrientmanagecoren_tioughnioga_time.png" width="50%" align="right"/&gt;
+
+---
+
+name: conclusion
+
+# Key takeaways and management implications
+
+.pull-left[**Nutrient trends**
+  - Overall decreasing trend for TN and TP but not SS
+  - Near-term TN uptick, especially from Chemung and Waverly
+  - TP decrease sharper from sub-gaging stations
+
+**BMP implementation**
+  - Benefits of dedicated BMP coordinator
+  - Benefits of state-supported BMP implementations
+  - BMP establishment time]
+
+.pull-right[**BAP score**
+  - No clear trends
+  - may not be effective for assessing regional BMP implementation nutrient and sediment reductions
+
+**Additional influences**
+  - Relatively stability in the region
+  - Effect of climate warming
+  - Recent land-use changes]
+
+---
+
+class: middle, center
+
+# Thanks! Questions?
+
+Cassandra M., Davis | Research Support Specialist &lt;cassandra.davis@dec.ny.gov&gt; 
+
+Zi Xun (Alex), Kua | Senior Research Support Specialist
+
+&lt;zkua01@esf.edu&gt;
+
+.small[Slide created via Yihui Xie's R package [xaringan](https://github.com/yihui/xaringan).]
+---
+
+#### Cropland Grass Buffer
+
+  - Implementation in two periods: before and after 2010
+  
+  - `East Branch Tioughnioga River` implemented the most (~45 hectares)
+
+&lt;img src="figures/croplandgrassbuff_time.png" width="85%" align="center" /&gt;
+
+&lt;img src="figures/croplandgrassbuff_huc10.png" width="85%" align="center" /&gt;
+
+---
+
+#### Cropland Forest Buffer
+
+  - Implementation increasing through time
+  
+  - Two standouts HUC 10s `Lower Chenango River` and `East Branch Tioughnioga River`
+
+&lt;img src="figures/croplandforestbuff_time.png" width="85%" align="center" /&gt;
+
+&lt;img src="figures/croplandforestbuff_huc10.png" width="85%" align="center" /&gt;
+
+---
+
+#### Exclusion Fence Grass Buffer
+
+  - Started regularly after 2000
+  
+  - Implementation peaked around 2008
+  
+  - Most hectares in `Upper Chenango River` and `Unadilla River`
+
+&lt;img src="figures/exfencegrassbuff_time.png" width="85%" align="center" /&gt;
+
+&lt;img src="figures/exfencegrassbuff_huc10.png" width="85%" align="center" /&gt;
+
+---
+
+#### Exclusion Fence Forest Buffer
+
+  - Highest implementation in 2007 (mostly from `Headwaters Susquehanna River`)
+  
+  - Implementation regular after 2002
+
+&lt;img src="figures/exfenceforestbuff_time.png" width="85%" align="center" /&gt;
+
+&lt;img src="figures/exfenceforestbuff_huc10.png" width="85%" align="center" /&gt;
+
+---
+
+# BMPs vs. nutrients (TP)?
+
+## **Nutrient Management Core N** | Buffer BMPs
+
+.left-column[Lighter hue = more recent
+
+No clear correlation
+
+Duration effect of BMP implementation]
+
+.right-column[&lt;img src="figures/ntn_tp_nutrientmanagecoren.png" width="100%" align="center" /&gt;]
+
+---
+
+# BMPs vs. nutrients (TP)?
+
+## Nutrient Management Core N | **Buffer BMPs** 
+
+.left-column[Lighter hue = more recent
+
+No clear correlation
+
+Duration effect of BMP implementation]
+.right-column[&lt;img src="figures/ntn_tp_bufferbmp.png" width="100%" align="center" /&gt;]
+
+---
+
+# BMPs vs. nutrients (NTN Total Nitrogen)?
+
+## **Nutrient Management Core N** | Buffer BMPs
+
+.left-column[Lighter hue = more recent
+
+No clear correlation
+
+Duration effect of BMP implementation]
+
+.right-column[&lt;img src="figures/ntn_tn_nutrientmanagecoren.png" width="100%" align="center" /&gt;]
+
+---
+
+# BMPs vs. nutrients (NTN Total Nitrogen)?
+
+## Nutrient Management Core N | **Buffer BMPs** 
+
+.left-column[Lighter hue = more recent
+
+No clear correlation
+
+Duration effect of BMP implementation]
+.right-column[&lt;img src="figures/ntn_tn_bufferbmp.png" width="100%" align="center" /&gt;]
+
+---
+name: chemung_buff
+# Case Study
+
+###[**Chemung River**](#chemung_buff) | [Cohocton River](#cohocton_buff) | [Chenango River](#chenango_buff) | [Tioughnioga River](#tioughnioga_buff)
+
+[**Buffer BMPs**](#chemung_buff) | [Nutrient Management Core N](#chemung_nmcn)
+
+&lt;img src="figures/bap_chemung_time.png" width="50%" align="left"/&gt;
+&lt;img src="figures/buffer_chemung_time.png" width="50%" align="right"/&gt;
+
+---
+name:chemung_nmcn
+# Case Study
+
+###[**Chemung River**](#chemung_buff) | [Cohocton River](#cohocton_buff) | [Chenango River](#chenango_buff) | [Tioughnioga River](#tioughnioga_buff)
+
+[Buffer BMPs](#chemung_buff) | [**Nutrient Management Core N**](#chemung_nmcn)
+
+&lt;img src="figures/bap_chemung_time.png" width="50%" align="left"/&gt;
+
+&lt;img src="figures/nutrientmanagecoren_chemung_time.png" width="50%" align="right"/&gt;
+
+---
+name: chenango_buff
+# Case Study
+
+###[Chemung River](#chemung_buff) | [Cohocton River](#cohocton_buff) | [**Chenango River**](#chenango_buff) | [Tioughnioga River](#tioughnioga_buff)
+
+[**Buffer BMPs**](#chenango_buff) | [Nutrient Management Core N](#chenango_nmcn)
+
+&lt;img src="figures/bap_chenango_time.png" width="50%" align="left"/&gt;
+&lt;img src="figures/buffer_chenango_time.png" width="50%" align="right"/&gt;
+
+---
+name: chenango_buff
+# Case Study
+
+###[Chemung River](#chemung_buff) | [Cohocton River](#cohocton_buff) | [**Chenango River**](#chenango_buff) | [Tioughnioga River](#tioughnioga_buff)
+
+[Buffer BMPs](#chenango_buff) | [**Nutrient Management Core N**](#chenango_nmcn)
+
+&lt;img src="figures/bap_chenango_time.png" width="50%" align="left"/&gt;
+&lt;img src="figures/nutrientmanagecoren_chenango_time.png" width="50%" align="right"/&gt;
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create();
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
