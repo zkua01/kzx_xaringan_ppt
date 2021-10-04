@@ -4,7 +4,7 @@
     <title>Upper Susquehanna Watershed Progress</title>
     <meta charset="utf-8" />
     <meta name="author" content="Cassandra M. Davis, Zi Xun Kua, Stephen B. Shaw, John C. Stella, Lauren A. Townley" />
-    <meta name="date" content="2021-09-30" />
+    <meta name="date" content="2021-10-04" />
     <script src="Factors_Meeting_20211008_files/header-attrs-2.11/header-attrs.js"></script>
     <link href="Factors_Meeting_20211008_files/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="Factors_Meeting_20211008_files/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
@@ -17,81 +17,285 @@ class: center, middle, inverse, title-slide
 # Upper Susquehanna Watershed Progress
 ## Best Management Practice (BMP) implementation on a HUC 10 scale
 ### Cassandra M. Davis, Zi Xun Kua, Stephen B. Shaw, John C. Stella, Lauren A. Townley
-### September 30, 2021
+### October 04, 2021
 
 ---
-
-
 
 
 name: outline
 
-# Outline
 
-Purpose: Compare the relationships between BMP implementation and the water quality measurements collected through the Nontidal Network (NTN) gaging stations and the Rotating Integrated Basin Studies (RIBS).
+
+# Outline
 
   1. Background and trends overview
   
-  2. BMP time series and maps
+  2. Objective and questions
   
-  3. Case study results
+  3. Data sets
   
-  4. Key takeaways and management implications
+  4. Analyses and results
   
-  5. Current work
-
----
-
-name: background_toc
-
-# Background and trends overview
-
-  - [Background](#background)
+  5. Key takeaways and management implications
   
-  - [Questions](#questions)
-  
-  - [Data sets](#datasets)
+  6. Current work
 
 ---
 
 name: background
 
-## Background
+# Background and trends overview
 
+  - New York WIP III goals and targets (910 tons of TN and 240 tons of TP)
+  
   - Chesapeake Bay and New York - 6% of load
   
-  - Relationship between land management and water quality
+  - Nutrient loads measured by [6 nontidal network gage stations](#ntn)
   
-  - Identify gaps to clarify causal relationships
+  - Nutrient trends vary ([TN](#ntn_tn), [TP](#ntn_tp), [SS](#ntn_ss))
+  
+  - Interested in improving efficacy of management measures
 
 ---
 
 name: questions
 
-## Questions:
+# Objective and questions
 
-  1) How do the magnitude and trends in nutrient loads relate to the scale of BMP implementation at large watershed scales?
+Purpose: Compare the relationships between BMP implementation and the water quality measurements collected through the Nontidal Network (NTN) gaging stations and the Rotating Integrated Basin Studies (RIBS).
+
+  1) Is there a difference in BMP implementation across New York? If so, what are the differences?
   
-  2) How does the variation and trends in biotic indicators relate to the spatial distribution and timing of BMPs implemented
+  2) How does the variation and trends in biotic indicators relate to the spatial distribution and timing of BMPs implemented?
+  
+  3) How do the magnitude and trends in nutrient loads relate to the scale of BMP implementation at large watershed scales?
+  
+  4) How does the basinwide trends in nutrient loads relate to biotic indicators in the region?
 
 ---
 
 name: datasets
 
-## Data sets
+# Data sets
 
-  - USGS Nontidal network (NTN) nutrient measurements
+  - USGS Nontidal network ([NTN](#ntn)) nutrient measurements
   
-  - Rotating Integrated Basin Studies (RIBS)
-  
+  - Rotating Integrated Basin Studies ([RIBS](#ribs_home))
     + Biological Assesment Profile (BAP) score
     
-  - Spatial Data
-    
+  - [Spatial Data](#spatial_home)
     + Chesapeake Bay land use data
     + National hydrography data set
+    
+  - Best Management Practices ([BMP](#bmp_home))
 
-&lt;img src="figures/HUC10Names.jpg" width="90%" align="center" /&gt;
+&lt;img src="figures/HUC10Names.jpg" width="70%" align="center" /&gt;
+
+---
+
+name: ribs_home
+
+## Rotating Integrated Basin Studies (RIBS)
+
+  - 5-year sampling cycle
+  
+  - includes: water column, sediment, organism tissue chemistry, and [**biological assessment**](#baps_explain)
+
+[&lt;img src="figures/AverageBAPScores.jpg" width="85%" align="center" /&gt;](#baps_explain)
+
+More information at: https://www.dec.ny.gov/chemical/23848.html
+
+Data link: https://nysdec.maps.arcgis.com/apps/webappviewer/index.html?id=692b72ae03f14508a0de97488e142ae1
+
+---
+
+name: spatial_home
+
+## Spatial Data
+
+### [1-m Land Use data](#landuse_huc10)
+
+  - land use data based on satellite imagery (2013)
+  - developed by UVM for the Chesapeake Bay program in 2016
+
+### [National Hydrography Dataset (NHD)](#nhd)
+
+  - Stream kilometers (2015)
+  - Stream density
+
+### [Riparian Managament Zone (RMZ)](#rmz_buff)
+
+  - 30 meter buffer around streams
+  - created from NHD dataset (2015) and the CBP and use dataset (2016)
+
+---
+
+name: bmp_home
+
+# Best management practices (BMPs)
+
+  - [Nutrient Management Core N (Annual)](#nutrientmanagementmap) &amp; P
+  
+  - [Riparian Buffer BMPs (Cumulative)](#buffermap) (Exclusion Fence &amp; Cropland Forest/Grass Buffer)
+  
+<iframe src="figures/usc_bmp_plotly.html" width="100%" height="450" scrolling="no" seamless="seamless" frameBorder="0"></iframe>
+
+---
+
+# Analyses and Results
+
+  1) Is there a difference in BMP implementation across New York? If so, what are the differences? [KW-test and pairwise Wilcoxon test (post hoc)](#obj_1)
+  
+  2) How does the variation and trends in biotic indicators relate to the spatial distribution and timing of BMPs implemented? [Linear mixed model (LMM); Linear regression](#obj_2)
+  
+  3) How do the magnitude and trends in nutrient loads relate to the scale of BMP implementation at large watershed scales? [Linear regression](#obj_3)
+  
+  4) How does the basinwide trends in nutrient loads relate to biotic indicators in the region? [Linear regression](#obj_4)
+
+---
+
+name: obj_1
+
+#### Analyses and results I
+
+1) Is there a difference in BMP implementation across New York? If so, what are the differences? 
+
+- Cumulative riparian buffers (total area and proportional) and five-year average nutrient management core N (mean area and proportional) non parametric
+
+- Kruskal-Wallis test for non parametric data
+
+- **Yes** for riparian buffers: area `\((KW\chi^2=19.65;df=4;p&lt;0.001)\)`, proportional `\((KW\chi^2=14.96;df=4;p&lt;0.01)\)`
+
+- **No** for nutrient management: area `\((KW\chi^2=5.54,df=4,p&gt;0.2)\)`, proportional `\((KW\chi^2=4.23;df=4;p&gt;0.3)\)`
+
+---
+
+#### Analyses and results I
+
+1) Is there a difference in BMP implementation across New York? If so, what are the differences? 
+
+- Pairwise Wilcoxon test as post hoc test for nonparametric data: More riparian buffers in Chenango (not different from Upper Susquehanna)
+
+&lt;img src="figures/bmp_aov_multiplot.png" width="90%" align="center" /&gt;
+
+---
+
+name: obj_2
+
+#### Analyses and results II 
+
+2) How does the variation and trends in biotic indicators relate to the spatial distribution and timing of BMPs implemented?
+
+[LMM](#bap_ts): `lmer(BAP ~ HUC8 * year + (1|HUC10))` 
+
+- to show BAP trends and difference between HUC 8
+
+Estimated marginal means ([EMmeans](#bap_emm)) post hoc test
+
+- to identify which HUC 8 is really different
+
+[Linear regression](#bapslope_bmp) of BAP slopes by BMP implementation
+
+- to show the relationship between changes in BAP score with BMP implementation for each HUC 8
+
+- BAP slopes calculated for each HUC 10
+
+---
+
+name: obj_3
+
+#### Analyses and results III
+
+3) How do the magnitude and trends in nutrient loads relate to the scale of BMP implementation at large watershed scales?
+
+Linear regression of NTN measurements by BMP implementation
+
+- [Nutrient Management Core N](#ntn_nmcn) (Annual): `lm(TN ~ NMCN)`, `lm(TP ~ NMCN)`, `lm(SS ~ NMCN)`
+
+- [Riparian Buffers](#ntn_buff) (Cumulative): same formula but with cumulative riparian buffers
+
+---
+
+name: obj_4
+
+#### Analyses and results IV
+
+4) How does the basinwide trends in nutrient loads relate to biotic indicators in the region?
+  
+Linear regression of basinwide NTN measurements by BAP score - `lm(TN ~ BAP)`, `lm(TP ~ BAP)`, `lm(SS ~ BAP)`
+
+&lt;img src="figures/ntn_bap_lm_multipanel.png" width="65%" align="center" /&gt;
+
+---
+
+name: conclusion
+
+# Key takeaways and management implications
+
+.pull-left[**Nutrient trends**
+  - Overall decreasing trend for TN and TP but not SS
+  - Near-term TN uptick, especially from Chemung and Waverly
+  - TP decrease sharper from sub-gaging stations
+
+**BMP implementation**
+  - Benefits of dedicated BMP coordinator
+  - Benefits of state-supported BMP implementations
+  - BMP establishment time]
+
+.pull-right[**BAP score**
+  - No clear trends
+  - may not be effective for assessing regional BMP implementation nutrient and sediment reductions
+
+**Additional influences**
+  - Relatively stability in the region
+  - Effect of climate warming
+  - Recent land-use changes]
+
+---
+
+name: current_work
+
+# Current work
+
+  - Waste water treatment plant (WWTP) growth analysis
+  
+  - Upper Susquehanna Watershed Progress Dashboard
+
+---
+
+name: wwtp_growth
+
+## WWTP growth analysis
+
+  - Correlation of annual mean WWTP outflow and stream flow
+  
+  - Annual mean WWTP outflow trends
+  
+  - `lm(log(WWTP_outflow) ~ stream_flow + year)` for each facility
+
+  - Examples: [Le Roy R Summerson WWTF](#wwtp_leroy), [Sherburne (V) STP](#wwtp_sherburne), [Waverly (V) STP](#wwtp_waverly)
+
+---
+
+name: uppersus_dashboard
+
+## [Upper Susquehanna watershed progress dashboard](https://nysdec.maps.arcgis.com/apps/dashboards/1bc8652949434fc589d33c29c4056178)
+
+&lt;img src="figures/uppersus_dashboard_explain.png" width="100%" align="center"/&gt;
+
+---
+
+class: middle, center
+
+# Thanks! Questions?
+
+Cassandra M., Davis | Research Support Specialist &lt;cassandra.davis@dec.ny.gov&gt; 
+
+Zi Xun (Alex), Kua | Senior Research Support Specialist
+
+&lt;zkua01@esf.edu&gt;
+
+.small[Slide created via Yihui Xie's R package [xaringan](https://github.com/yihui/xaringan).]
 
 ---
 
@@ -107,79 +311,13 @@ name: ntn
 
   - Short-term: [Campbell](#campbell), [Chemung](#chemung), [Conklin](#conklin), [Rockdale](#rockdale), [Waverly](#waverly)
   
-&lt;img src="figures/NTNMonitoringStationsCompare.jpg" width="50%" align="center" /&gt;
+[&lt;img src="figures/NTNMonitoringStationsCompare.jpg" width="50%" align="center" /&gt;](https://nysdec.maps.arcgis.com/apps/dashboards/1bc8652949434fc589d33c29c4056178)
+
+[Back](#background)
 
 ---
 
-name: allstation
-
-#### All Stations
-
-&lt;img src="figures/NTNMonitoringStationsCompare.jpg" width="85%" align="center" /&gt;
-
-[Back](#ntn)
-
----
-
-name: campbell
-
-#### Campbell
-
-&lt;img src="figures/NTNCampbell.jpg" width="85%" align="center" /&gt;
-
-[Back](#ntn)
-
----
-
-name: chemung
-
-#### Chemung
-
-&lt;img src="figures/NTNChemung.jpg" width="85%" align="center" /&gt;
-
-[Back](#ntn)
-
----
-
-name: rockdale
-
-#### Rockdale
-
-&lt;img src="figures/NTNRockdale.jpg" width="85%" align="center" /&gt;
-
-[Back](#ntn)
-
----
-
-name: conklin
-
-#### Conklin
-
-&lt;img src="figures/NTNConklin.jpg" width="85%" align="center" /&gt;
-
-[Back](#ntn)
-
----
-
-name: waverly
-
-#### Waverly
-
-&lt;img src="figures/NTNWaverly.jpg" width="85%" align="center" /&gt;
-
-[Back](#ntn)
-
----
-
-name: towanda
-
-#### Towanda
-    
-&lt;img src="figures/NTNTowanda.jpg" width="85%" align="center" /&gt;
-
-[Back](#ntn)
-
----
+name: ntn_tn
 
 #### Total Nitrogen
 
@@ -189,6 +327,8 @@ Overall *decreasing* trend (**Towanda**)
 **Waverly** and **Chemung** showed signs of *increase*
   
 Slight *uptick* in 2019
+
+[Back](#background)
 ]
 
 .right-column[
@@ -196,11 +336,15 @@ Slight *uptick* in 2019
 
 ---
 
+name: ntn_tp
+
 #### Total Phosphorus
 
 .left-column[Overall *decreasing* trend (**Towanda**)
   
 *Decrease* slower than TN but clearer at **sub-watersheds**
+
+[Back](#background)
 ]
 
 .right-column[
@@ -208,11 +352,15 @@ Slight *uptick* in 2019
 
 ---
 
+name: ntn_ss
+
 #### Suspended sediments
 
 .left-column[Levels *fluctuated* through the years with recent *increases*
   
 Varying trends among sub-watershed
+
+[Back](#background)
 ]
 
 .right-column[
@@ -220,23 +368,9 @@ Varying trends among sub-watershed
 
 ---
 
-name: ribs_home
+name: baps_explain
 
-### Rotating Integrated Basin Studies (RIBS)
-
-  - 5-year sampling cycle
-  
-  - includes: water column, sediment, organism tissue chemistry, and biological assessment
-
-&lt;img src="figures/AverageBAPScores.jpg" width="85%" align="center" /&gt;
-
-More information at: https://www.dec.ny.gov/chemical/23848.html
-
-Data link: https://nysdec.maps.arcgis.com/apps/webappviewer/index.html?id=692b72ae03f14508a0de97488e142ae1
-
----
-
-#### Biological assessment profile (BAP) score
+### Biological assessment profile (BAP) score
 .pull-left[
 - Based on stream macroinvertebrates
     
@@ -251,7 +385,7 @@ Data link: https://nysdec.maps.arcgis.com/apps/webappviewer/index.html?id=692b72
     
 https://www.dec.ny.gov/docs/water_pdf/bapnarrative18.pdf]
 
-.pull-right[&lt;img src="figures/5yearBAPScores.gif" width="100%" align="center" /&gt;]
+[.pull-right[&lt;img src="figures/5yearBAPScores.gif" width="100%" align="center" /&gt;]](#baphuc10)
 
 ???
 scores derived from species  richness,  EPT  richness, Hilsenhoff’s biotic index, percent model affinity, nutrient biotic index, species diversity, and non-Chironomidae  and  Oligochaeta  richness
@@ -260,20 +394,9 @@ see link for detailed description and metrics for each score component
 
 ---
 
-##### BAP time series
-
-  - No overall changes across the Upper Susquehanna / Chemung watershed
-
-&lt;img src="figures/bap_time_series.png" width="85%" align="center" /&gt;
-
-???
-will revisit time trends again later
-
----
-
 name: baphuc10
 
-##### BAP by HUC 10
+### BAP by HUC 10
 
   - [Unequal sampling distribution](#ribs_home) in the watershed
   
@@ -283,27 +406,9 @@ name: baphuc10
 
 ---
 
-### Spatial Data
-
-#### 1-m Land Use data
-
-  - land use data based on satellite imagery (2013)
-  - developed by UVM for the Chesapeake Bay program in 2016
-
-#### National Hydrography Dataset (NHD)
-
-  - Stream kilometers (2015)
-  - Stream density
-
-#### Riparian Managament Zone (RMZ)
-
-  - 30 meter buffer around streams
-  - created from NHD dataset (2015) and the CBP and use dataset (2016)
-
----
 name: landuse_huc10
 
-#### [**Land use**](#landuse_huc10) - [Agriculture](#agriculture) | [Forested](#forested) | [Wetlands](#wetlands) | [Developed](#developed) | [Others](#others)
+#### [**Land use**](#spatial_home) - [Agriculture](#agriculture) | [Forested](#forested) | [Wetlands](#wetlands) | [Developed](#developed) | [Others](#others)
 
 &lt;img src="figures/HUC10Names.jpg" width="100%" align="center" /&gt;
 
@@ -434,109 +539,69 @@ name: water
 
 ---
 
-#### National Hydrography Dataset
+name: nhd
 
-  - Stream density
+### National Hydrography Dataset - Stream length
   
-  - Riparian Management Zones (RMZ)
-
-&lt;img src="figures/Streams.jpg" width="100%" align="center" /&gt;
+[&lt;img src="figures/Streams.jpg" width="100%" align="center" /&gt;](#stream_dens)
 
 ---
 
-##### Stream density
+name: stream_dens
+
+### National Hydrography Dataset - Stream density
   
   - Stream length over HUC 10 area
 
-&lt;img src="figures/StreamDensityKm.jpg" width="100%" align="center" /&gt;
+[&lt;img src="figures/StreamDensityKm.jpg" width="100%" align="center" /&gt;](#spatial_home)
 
 ---
 
-name: RMZ_landcov
+name: rmz_buff
 
-##### **Riparian management zones (RMZ)**
+#### **Riparian management zones (RMZ)**
 
-  - [**NHD + land cover dataset**](#RMZ_landcov)
-
-  - [30 meter buffer around streams](#RMZ_buff)
+  - [**30 meter buffer around streams**](#rmz_example)
   
-  - [Area of RMZ](#RMZ_example) [over HUC 10](#RMZ_HUC10)
-
-&lt;img src="figures/RMZExample.jpg" width="85%" align="center" /&gt;
-
----
-
-name: RMZ_buff
-
-##### **Riparian management zones (RMZ)**
-
-  - [NHD + land cover dataset](#RMZ_landcov)
+  - NHD + land cover dataset
   
-  - [**30 meter buffer around streams**](#RMZ_buff)
-  
-  - [Area of RMZ](#RMZ_example) [over HUC 10](#RMZ_HUC10)
+  - Area of RMZ over HUC 10
 
 &lt;img src="figures/RMZExample2.jpg" width="85%" align="center" /&gt;
 
 ---
 
-name: RMZ_example
+name: rmz_example
 
-##### Riparian management zones (RMZ)
+#### **Riparian management zones (RMZ)**
 
-  - [NHD + land cover dataset](#RMZ_landcov)
+  - 30 meter buffer around streams
   
-  - [30 meter buffer around streams](#RMZ_buff)
+  - [**NHD + land cover dataset**](#rmz_huc10)
   
-  - [**Area of RMZ**](#RMZ_example) [over HUC 10](#RMZ_HUC10)
+  - Area of RMZ over HUC 10
 
 &lt;img src="figures/RMZExample3.jpg" width="85%" align="center" /&gt;
 
 ---
 
-name: RMZ_HUC10
+name: rmz_huc10
 
-##### Riparian management zones (RMZ)
+#### Riparian management zones (RMZ)
 
-  - [NHD + land cover dataset](#RMZ_landcov)
+  - 30 meter buffer around streams
   
-  - [30 meter buffer around streams](#RMZ_buff)
+  - NHD + land cover dataset
   
-  - [Area of RMZ](#RMZ_example) [**over HUC 10**](#RMZ_HUC10)
+  - [**Area of RMZ over HUC 10**](#spatial_home)
 
 &lt;img src="figures/RMZHUC10.jpg" width="100%" align="center" /&gt;
 
 ---
 
-name: bmp_plotly
-
-# Best management practices (BMPs)
-
-<iframe src="figures/usc_bmp_plotly.html" width="100%" height="500" scrolling="no" seamless="seamless" frameBorder="0"></iframe>
-
----
-
-# Best management practices (BMPs)
-
-## Annual 
-
-  - [Nutrient Management Core N](#nutrientmanagementtime) &amp; P
-  
-  - Soil Conservation Plans
-  
-  - Cover Crops
-
-## Cumulative
-
-  - [Buffer BMPs](#buffertime) (Exclusion Fence &amp; Cropland Forest/Grass Buffer)
-  
-  - Wetlands
-
----
-
 name: nutrientmanagementmap
 
-## Annual - [Nutrient Management Core N](#nutrientmanagementmap)
+## Annual - [Nutrient Management Core N](#bmp_home)
 
 .left-column[Similar values from `Nutrient Management Core P`
   
@@ -551,7 +616,7 @@ Implementation more consistent in some [HUC 10](#nutrientmanagementhuc10)s
 
 name: nutrientmanagementtime
 
-## Annual - [Nutrient Management Core N](#nutrientmanagementmap)
+## Annual - [Nutrient Management Core N](#bmp_home)
 
 .left-column[Similar values from `Nutrient Management Core P`
   
@@ -566,7 +631,7 @@ Implementation more consistent in some [HUC 10](#nutrientmanagementhuc10)s
 
 name: nutrientmanagementhuc10
 
-## Annual - [Nutrient Management Core N](#nutrientmanagementmap)
+## Annual - [Nutrient Management Core N](#bmp_home)
 
 .left-column[Similar values from `Nutrient Management Core P`
   
@@ -581,7 +646,7 @@ Implementation more consistent in some [HUC 10](#nutrientmanagementhuc10)s
 
 name: buffermap
 
-## Cumulative - [Buffers](#buffermap)
+## Cumulative - [Buffers](#bmp_home)
 
 .left-column[Proportions calculated from riparian management zones (RMZ)
 
@@ -596,7 +661,7 @@ Fewer [HUC 10](#bufferhuc10)s have implemented
 
 name: buffertime
 
-## Cumulative - [Buffers](#buffermap)
+## Cumulative - [Buffers](#bmp_home)
 
 .left-column[Proportions calculated from riparian management zones (RMZ)
 
@@ -611,7 +676,7 @@ Fewer [HUC 10](#bufferhuc10)s have implemented
 
 name: bufferhuc10
 
-## Cumulative - [Buffers](#buffermap)
+## Cumulative - [Buffers](#bmp_home)
 
 .left-column[Proportions calculated from riparian management zones (RMZ)
 
@@ -624,147 +689,135 @@ Fewer [HUC 10](#bufferhuc10)s have implemented
 
 ---
 
-# BMPs vs. BAP score?
+name: bap_ts
 
-## **Nutrient Management Core N** | Buffer BMPs
+#### BAP time series (post-1990)
 
-.left-column[Colors represent each HUC 8
+- HUC 8 `\((\chi^2=16.75;df=4;p&lt;0.01)\)`, Year `\((\chi^2=7.49;df=1;p&lt;0.01)\)`, and [**HUC 8 : Year**](#bap_emm) `\((\chi^2=16.70;df=4;p&lt;0.01)\)` were significant factors
 
-No clear overall trends]
+- No overall changes across time??
 
-.right-column[&lt;img src="figures/nutrientmanage_coren_x_bap.png" width="100%" align="center" /&gt;]
-
----
-
-# BMPs vs. BAP score?
-
-## Nutrient Management Core N | **Buffer BMPs**
-
-.left-column[Colors represent each HUC 8
-
-No clear overall trends]
-
-.right-column[&lt;img src="figures/bufferbmp_x_bap.png" width="100%" align="center" /&gt;]
+[&lt;img src="figures/bap_time_series.png" width="85%" align="center" /&gt;](#obj_2)
 
 ---
 
-name: cohocton_buff
+name: bap_emm
 
-# Case Study
+#### Estimated marginal means (BAP by HUC8)
 
-###[**Cohocton River**](#cohocton_buff) | [Tioughnioga River](#tioughnioga_buff)
+No overall difference between HUC 8??
 
-[**Buffer BMPs**](#cohocton_buff) | [Nutrient Management Core N](#cohocton_nmcn)
+BAP score started at different levels and became similar through time (`HUC8:Year`)
 
-&lt;img src="figures/bap_cohocton_time.png" width="50%" align="left"/&gt;
-&lt;img src="figures/buffer_cohocton_time.png" width="50%" align="right"/&gt;
-
----
-name: cohocton_nmcn
-
-# Case Study
-
-###[**Cohocton River**](#cohocton_buff) | [Tioughnioga River](#tioughnioga_buff)
-
-[Buffer BMPs](#cohocton_buff) | [**Nutrient Management Core N**](#cohocton_nmcn)
-
-&lt;img src="figures/bap_cohocton_time.png" width="50%" align="left"/&gt;
-&lt;img src="figures/nutrientmanagecoren_cohocton_time.png" width="50%" align="right"/&gt;
-
----
-name: tioughnioga_buff
-
-# Case Study
-
-###[Cohocton River](#cohocton_buff) | [**Tioughnioga River**](#tioughnioga_buff)
-
-[**Buffer BMPs**](#tioughnioga_buff) | [Nutrient Management Core N](tioughnioga_nmcn)
-
-&lt;img src="figures/bap_tioughnioga_time.png" width="50%" align="left"/&gt;
-&lt;img src="figures/buffer_tioughnioga_time.png" width="50%" align="right"/&gt;
-
----
-name: tioughnioga_nmcn
-
-# Case Study
-
-###[Cohocton River](#cohocton_buff) | [**Tioughnioga River**](#tioughnioga_buff)
-
-[Buffer BMPs](#tioughnioga_buff) | [**Nutrient Management Core N**](#tioughnioga_nmcn)
-
-&lt;img src="figures/bap_tioughnioga_time.png" width="50%" align="left"/&gt;
-&lt;img src="figures/nutrientmanagecoren_tioughnioga_time.png" width="50%" align="right"/&gt;
+[&lt;img src="figures/bap_huc8_multiplot.png" width="85%" align="center" /&gt;](#obj_2)
 
 ---
 
-name: conclusion
+name: bapslope_bmp
 
-# Key takeaways and management implications
+#### Linear regression: BAP slope by BMP implemented (natural-logged)
 
-.pull-left[**Nutrient trends**
-  - Overall decreasing trend for TN and TP but not SS
-  - Near-term TN uptick, especially from Chemung and Waverly
-  - TP decrease sharper from sub-gaging stations
+No significant relationship; Upper Susquehanna negative correlation
 
-**BMP implementation**
-  - Benefits of dedicated BMP coordinator
-  - Benefits of state-supported BMP implementations
-  - BMP establishment time]
-
-.pull-right[**BAP score**
-  - No clear trends
-  - may not be effective for assessing regional BMP implementation nutrient and sediment reductions
-
-**Additional influences**
-  - Relatively stability in the region
-  - Effect of climate warming
-  - Recent land-use changes]
+[&lt;img src="figures/bap_bmp_huc8_multipanel.png" width="70%" align="center" /&gt;](#obj_2)
 
 ---
 
-name: current_work
+name: ntn_nmcn
 
-# Current work
+#### Linear regression: NTN measurements by nutrient management core N implemented
 
-  - Waste water treatment plant (WWTP) growth analysis
-  
-  - Upper Susquehanna Watershed Progress Dashboard
+.pull-left[TN: `\(F=12.54;df=1,535;p&lt;0.001\)`
 
----
+TP: `\(F=36.84;df=1,535;p&lt;0.001\)`
 
-name: wwtp_growth
+SS: `\(F=22.66;df=1,529;p&lt;0.001\)`]
 
-## WWTP growth analysis
-
-  - Correlation of annual mean WWTP outflow and stream flow
-  
-  - Annual mean WWTP outflow trends
-  
-  - `lm(log(WWTP_outflow) ~ stream_flow + year)` for each facility
-
-  - Examples: [Le Roy R Summerson WWTF](#wwtp_leroy), [Sherburne (V) STP](#wwtp_sherburne), [Waverly (V) STP](#wwtp_waverly)
+.pull-right[[&lt;img src="figures/ntn_nmcn_multipanel.png" width="100%" align="center" /&gt;](#obj_3)]
 
 ---
 
-name: uppersus_dashboard
+name: ntn_buff
 
-## [Upper Susquehanna watershed progress dashboard](https://nysdec.maps.arcgis.com/apps/dashboards/1bc8652949434fc589d33c29c4056178)
+#### Linear regression: NTN measurements by riparian buffers implemented
 
-&lt;img src="figures/uppersus_dashboard_explain.png" width="100%" align="center"/&gt;
+.pull-left[TN: `\(F=30.65;df=1,535;p&lt;0.001\)`
+
+TP: `\(F=49.00;df=1,535;p&lt;0.001\)`
+
+SS: `\(F=1.94;df=1,529;p&gt;0.1\)`]
+
+.pull-right[[&lt;img src="figures/ntn_buff_multipanel.png" width="100%" align="center" /&gt;](#obj_3)]
 
 ---
 
-class: middle, center
+name: allstation
 
-# Thanks! Questions?
+#### All Stations
 
-Cassandra M., Davis | Research Support Specialist &lt;cassandra.davis@dec.ny.gov&gt; 
+&lt;img src="figures/NTNMonitoringStationsCompare.jpg" width="85%" align="center" /&gt;
 
-Zi Xun (Alex), Kua | Senior Research Support Specialist
+[Back](#ntn)
 
-&lt;zkua01@esf.edu&gt;
+---
 
-.small[Slide created via Yihui Xie's R package [xaringan](https://github.com/yihui/xaringan).]
+name: campbell
+
+#### Campbell
+
+&lt;img src="figures/NTNCampbell.jpg" width="85%" align="center" /&gt;
+
+[Back](#ntn)
+
+---
+
+name: chemung
+
+#### Chemung
+
+&lt;img src="figures/NTNChemung.jpg" width="85%" align="center" /&gt;
+
+[Back](#ntn)
+
+---
+
+name: rockdale
+
+#### Rockdale
+
+&lt;img src="figures/NTNRockdale.jpg" width="85%" align="center" /&gt;
+
+[Back](#ntn)
+
+---
+
+name: conklin
+
+#### Conklin
+
+&lt;img src="figures/NTNConklin.jpg" width="85%" align="center" /&gt;
+
+[Back](#ntn)
+
+---
+
+name: waverly
+
+#### Waverly
+
+&lt;img src="figures/NTNWaverly.jpg" width="85%" align="center" /&gt;
+
+[Back](#ntn)
+
+---
+
+name: towanda
+
+#### Towanda
+    
+&lt;img src="figures/NTNTowanda.jpg" width="85%" align="center" /&gt;
+
+[Back](#ntn)
 
 ---
 
@@ -772,10 +825,13 @@ name: wwtp_leroy
 
 ### Le Roy R Summerson WWTF 
 
-&lt;img src="figures/outflow_gageflow_leroy.png" width="50%" align="left"/&gt;
-&lt;img src="figures/outflow_time_flowcat_leroy.png" width="50%" align="right"/&gt;
+&lt;img src="figures/outflow_gageflow_leroy.png" width="80%" align="center"/&gt;
 
-[Back](#wwtp_growth)
+---
+
+### Le Roy R Summerson WWTF
+
+[&lt;img src="figures/outflow_time_flowcat_leroy.png" width="80%" align="center"/&gt;](#wwtp_growth)
 
 ---
 
@@ -783,10 +839,13 @@ name: wwtp_sherburne
 
 ### Sherburne (V) STP
 
-&lt;img src="figures/outflow_gageflow_sherburne.png" width="50%" align="left"/&gt;
-&lt;img src="figures/outflow_time_flowcat_sherburne.png" width="50%" align="right"/&gt;
+&lt;img src="figures/outflow_gageflow_sherburne.png" width="80%" align="center"/&gt;
 
-[Back](#wwtp_growth)
+---
+
+### Sherburne (V) STP
+
+[&lt;img src="figures/outflow_time_flowcat_sherburne.png" width="80%" align="center"/&gt;](#wwtp_growth)
 
 ---
 
@@ -794,10 +853,13 @@ name: wwtp_waverly
 
 ### Waverly (V) STP
 
-&lt;img src="figures/outflow_gageflow_waverly.png" width="50%" align="left"/&gt;
-&lt;img src="figures/outflow_time_flowcat_waverly.png" width="50%" align="right"/&gt;
+&lt;img src="figures/outflow_gageflow_waverly.png" width="80%" align="center"/&gt;
 
-[Back](#wwtp_growth)
+---
+
+### Waverly (V) STP
+
+[&lt;img src="figures/outflow_time_flowcat_waverly.png" width="80%" align="center"/&gt;](#wwtp_growth)
 
 ---
 
@@ -950,7 +1012,9 @@ name: chenango_buff
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
-<script>var slideshow = remark.create();
+<script>var slideshow = remark.create({
+"countIncrementalSlides": false
+});
 if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   window.dispatchEvent(new Event('resize'));
 });
