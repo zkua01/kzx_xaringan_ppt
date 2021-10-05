@@ -4,7 +4,7 @@
     <title>Upper Susquehanna Watershed Progress</title>
     <meta charset="utf-8" />
     <meta name="author" content="Cassandra M. Davis, Zi Xun Kua, Stephen B. Shaw, John C. Stella, Lauren A. Townley" />
-    <meta name="date" content="2021-10-04" />
+    <meta name="date" content="2021-10-05" />
     <script src="Factors_Meeting_20211008_files/header-attrs-2.11/header-attrs.js"></script>
     <link href="Factors_Meeting_20211008_files/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="Factors_Meeting_20211008_files/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
@@ -17,7 +17,7 @@ class: center, middle, inverse, title-slide
 # Upper Susquehanna Watershed Progress
 ## Best Management Practice (BMP) implementation on a HUC 10 scale
 ### Cassandra M. Davis, Zi Xun Kua, Stephen B. Shaw, John C. Stella, Lauren A. Townley
-### October 04, 2021
+### October 05, 2021
 
 ---
 
@@ -62,15 +62,19 @@ name: questions
 
 # Objective and questions
 
-Purpose: Compare the relationships between BMP implementation and the water quality measurements collected through the Nontidal Network (NTN) gaging stations and the Rotating Integrated Basin Studies (RIBS).
+Compare the relationships between BMP implementations (**riparian buffers&lt;sup&gt;a&lt;/sup&gt; &amp; nutrient management plans&lt;sup&gt;b&lt;/sup&gt;**) and the **water quality measurements** collected through the Nontidal Network (NTN) gaging stations and the Rotating Integrated Basin Studies (RIBS).
 
-  1) Is there a difference in BMP implementation across New York? If so, what are the differences?
+  1) Is there a difference in BMP area or proportion implementation across New York? If so, what are the differences?
   
   2) How does the variation and trends in biotic indicators relate to the spatial distribution and timing of BMPs implemented?
   
   3) How do the magnitude and trends in nutrient loads relate to the scale of BMP implementation at large watershed scales?
   
   4) How does the basinwide trends in nutrient loads relate to biotic indicators in the region?
+
+.footnote[&lt;sup&gt;a&lt;/sup&gt; Riparian buffers (exclusion fence and cropland) as example of cumulative BMP
+
+&lt;sup&gt;b&lt;/sup&gt; Nutrient management as example of annual BMP]
 
 ---
 
@@ -186,8 +190,11 @@ name: obj_2
 
 2) How does the variation and trends in biotic indicators relate to the spatial distribution and timing of BMPs implemented?
 
-[LMM](#bap_ts): `lmer(BAP ~ HUC8 * year + (1|HUC10))` 
+[LMM](#bap_ts): `lmer(BAP ~ HUC8 * year + (1|HUC10))` (in `R::lme4`)
 
+`$$BAP_i = \beta_0 + \beta_1(HUC8)_i + \beta_3(year)_i + \beta_3(HUC8 \times year)_i+\epsilon_i$$`
+
+- where `\(\epsilon = HUC10\)`
 - to show BAP trends and difference between HUC 8
 
 Estimated marginal means ([EMmeans](#bap_emm)) post hoc test
@@ -210,7 +217,9 @@ name: obj_3
 
 Linear regression of NTN measurements by BMP implementation
 
-- [Nutrient Management Core N](#ntn_nmcn) (Annual): `lm(TN ~ NMCN)`, `lm(TP ~ NMCN)`, `lm(SS ~ NMCN)`
+- [Nutrient Management Core N](#ntn_nmcn) (Annual): `lm(TN ~ BAP)`, `lm(TP ~ BAP)`, `lm(SS ~ BAP)` (in `R::stats`)
+
+`$$y_i = \beta_0+\beta_1(NMCN)_i ; y = TN; TP; SS$$`
 
 - [Riparian Buffers](#ntn_buff) (Cumulative): same formula but with cumulative riparian buffers
 
@@ -222,9 +231,11 @@ name: obj_4
 
 4) How does the basinwide trends in nutrient loads relate to biotic indicators in the region?
   
-Linear regression of basinwide NTN measurements by BAP score - `lm(TN ~ BAP)`, `lm(TP ~ BAP)`, `lm(SS ~ BAP)`
+Linear regression of basinwide NTN measurements by BAP score - `lm(TN ~ BAP)`, `lm(TP ~ BAP)`, `lm(SS ~ BAP)` (in `R::stats`)
 
-&lt;img src="figures/ntn_bap_lm_multipanel.png" width="65%" align="center" /&gt;
+`$$y_i = \beta_0+\beta_1(BAP)_i; y = TN; TP; SS$$`
+
+&lt;img src="figures/ntn_bap_lm_multipanel.png" width="60%" align="center" /&gt;
 
 ---
 
@@ -247,6 +258,8 @@ name: conclusion
   - may not be effective for assessing regional BMP implementation nutrient and sediment reductions
 
 **Additional influences**
+  - Contributions from other sources (e.g. waste water)
+  - Relationship with other BMPs
   - Relatively stability in the region
   - Effect of climate warming
   - Recent land-use changes]
